@@ -10,6 +10,7 @@
 int main(void)
 {
 	int len, len2;
+	char *str1, *str2;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -17,8 +18,8 @@ int main(void)
 	_printf("print character %c and %c\n", 'a', '%');
 	printf("print character %c and %c\n", 'a', '%');
 
-	char *str1 = "Newton";
-	char *str2 = "abel";
+	str1 = "Newton";
+	str2 = "abel";
 	_printf("print string %s and %s\n", str1, str2);
 	printf("print string %s and %s\n", str1, str2);
 

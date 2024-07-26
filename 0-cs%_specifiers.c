@@ -1,9 +1,5 @@
 #include "main.h"
 
-void c_specifier(va_list args);
-void s_specifier();
-void printnoarg();
-int _putchar(char c);
 /**
   *c_specifier - function to print a character
   * @args: input argument from the function.
@@ -50,8 +46,4 @@ void modulo_specifier(va_list args)
 {
 	(void)args;
 	_putchar('%');
-void printnoarg()
-{
-     _putchar('%');
 }
-
