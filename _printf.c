@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 				{
 					case 'c':
 						
-						_c_specifier(va_list args);
+						_c_specifier(va_list args); /*(ABEL) _printchar( va_arg(args, char)) */
 						i=i + 2;
 						break;
 					case 's':
