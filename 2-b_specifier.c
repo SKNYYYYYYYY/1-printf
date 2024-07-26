@@ -14,8 +14,7 @@
 	int printed_chars = 0;
 	int i, len = 0;
 	unsigned int temp = num;
-
-
+	int leading_zero;
 	if (num == 0)
 	{
 		printed_chars += _putchar('0');
@@ -40,8 +39,7 @@
 		num /= 2;
 	}
 
-	int leading_zero = 1;
-
+	leading_zero = 1;
 	for (i = 0; i < len; i++)
 	{
 		if (binary_str[i] != '0')
