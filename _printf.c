@@ -14,7 +14,9 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, printed_chars = 0;
+	int i;
+
+	int printed_chars = 0;
 	
 	va_start(args, format);
 
@@ -31,15 +33,13 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					c_specifier(args);
-					printed_chars++;
+					printed_chars += c_specifier(args);
 					break;
 				case 's':
 					printed_chars += s_specifier(args);
 					break;
 				case '%':
-					modulo_specifier(args);
-					printed_chars++;
+					printed_chars += modulo_specifier(args);
 					break;
         case 'd':
           printed_chars += d_specifier(args);
@@ -48,18 +48,15 @@ int _printf(const char *format, ...)
           printed_chars += i_specifier(args);
           break;
 				default:
-					_putchar('%');
-					_putchar(format[i]);
-					printed_chars += 2;
+					printed_chars += _putchar('%');
+					printed_chars += _putchar(format[i]);
 					break;
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
-			printed_chars++;
+			printed_chars += _putchar(format[i]);
 		}
-		i++;
 	}
 	va_end(args);
 	return (printed_chars);
