@@ -32,8 +32,8 @@ int print_number(int n)
 **/
 int d_specifier(va_list args)
 {
+	
 	int n = va_arg(args, int);
-
 	return (print_number(n));
 }
 

@@ -41,19 +41,32 @@ int _printf(const char *format, ...)
 				case '%':
 					printed_chars += modulo_specifier(args);
 					break;
-        case 'd':
-          printed_chars += d_specifier(args);
-          break;
-        case 'i':
-          printed_chars += i_specifier(args);
-          break;
+				case 'd':
+					printed_chars += d_specifier(args);
+					break;
+				case 'i':
+					printed_chars += i_specifier(args);
+					break;
 				case 'b':
 					printed_chars += b_specifier(args);
+					break;
+				case 'u':
+					printed_chars += u_specifier(args);
+					break;
+				case 'o':
+					printed_chars += o_specifier(args);
+					break;
+				case 'x':
+					printed_chars += x_specifier(args);
+					break;
+				case 'X':
+					printed_chars += X_specifier(args);
 					break;
 				default:
 					printed_chars += _putchar('%');
 					printed_chars += _putchar(format[i]);
 					break;
+				
 			}
 		}
 		else
