@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, printed_chars = 0;
 	
-	directive_error = "Invalid directive";
 	va_start(args, format);
 
 	for (i = 0; format[i] != '\0'; i++)
