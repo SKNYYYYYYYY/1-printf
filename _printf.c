@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * _printf - function that produces output according to a format.
- * @format: is a character string composed of zero or more directives.
- * handled conversion specifiers:
- *	- c
- *	- s
- *	- %
- *	- d
- *	- i
- *
- * Return: the number of characters printed.
- */
+* _printf - function that produces output according to a format.
+* @format: is a character string composed of zero or more directives.
+* handled conversion specifiers:
+*   - c
+*   - s
+*   - %
+*
+* Return: the number of characters printed.
+*/
+
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -40,9 +39,10 @@ int _printf(const char *format, ...)
 						printed_chars++;
 						break;
 					default:
-						_putchar(format[i - 1]);
+						_putchar('%');
 						_putchar(format[i]);
 						printed_chars += 2;
+						break;
 				}
 			}
 			else
