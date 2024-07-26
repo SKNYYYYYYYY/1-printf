@@ -15,49 +15,57 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0, printed_chars = 0;
-
+	char *directive_error;
+	
+	directive_error = "Invalid directive";
 	va_start(args, format);
-
-	if (format)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		while (format[i])
+		if (format[i] == '%')
 		{
-			if (format[i] == '%')
+			i++;
+			if (format[i] == '\0')
 			{
-				i++;
-				switch (format[i])
+				while (*directive_error != '\0')
 				{
-					case 'c':
-						c_specifier(args);
-						printed_chars++;
-						break;
-					case 's':
-						printed_chars += s_specifier(args);
-						break;
-					case '%':
-						modulo_specifier(args);
-						printed_chars++;
-						break;
-                    case 'd':
-                        printed_chars += d_specifier(args);
-                        break;
-                    case 'i':
-                        printed_chars += i_specifier(args);
-                        break;
-					default:
-						_putchar('%');
-						_putchar(format[i]);
-						printed_chars += 2;
-						break;
+					printed_chars += _putchar(*directive_error);
+					directive_error++;
+					va_end(args);
+					return (-1);
 				}
 			}
-			else
+			switch (format[i])
 			{
-				_putchar(format[i]);
-				printed_chars++;
+				case 'c':
+					c_specifier(args);
+					printed_chars++;
+					break;
+				case 's':
+					printed_chars += s_specifier(args);
+					break;
+				case '%':
+					modulo_specifier(args);
+					printed_chars++;
+					break;
+        case 'd':
+          printed_chars += d_specifier(args);
+          break;
+        case 'i':
+          printed_chars += i_specifier(args);
+          break;
+				default:
+					_putchar('%');
+					_putchar(format[i]);
+					printed_chars += 2;
+					break;
 			}
-			i++;
 		}
+		else
+		{
+			_putchar(format[i]);
+			printed_chars++;
+		}
+		i++;
 	}
 	va_end(args);
 	return (printed_chars);
