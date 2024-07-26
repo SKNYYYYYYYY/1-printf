@@ -25,6 +25,9 @@ int main(void)
 
 	_printf("_print string %s and %s\n", str1, str2);
 	printf("print string %s and %s\n", str1, str2);
+	
+	_printf("_Print returned length: %i\n", len);
+	printf("Print returned length: %i\n", len2);
 
 	_printf("_Print integer: %i\n", j);
 	printf("Print integer: %i\n", j);
