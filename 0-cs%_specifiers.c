@@ -1,5 +1,12 @@
 #include "main.h"
+<<<<<<< HEAD
 
+=======
+void c_specifier(va_list args);
+void s_specifier();
+void printnoarg();
+int _putchar(char c);
+>>>>>>> ad0cc61d983eea0565e4997376bd74d17abe29de
 /**
   *c_specifier - function to print a character
   * @args: input argument from the function.
@@ -36,6 +43,7 @@ int s_specifier(va_list args)
 	return printed_chars;
 }
 
+<<<<<<< HEAD
 /**
   * modulo_specifier - function to print a modulo
   * @args: input argument from the function.
@@ -46,4 +54,10 @@ void modulo_specifier(va_list args)
 {
 	(void)args;
 	_putchar('%');
+=======
+void printnoarg()
+{
+     _putchar('%');
+>>>>>>> ad0cc61d983eea0565e4997376bd74d17abe29de
 }
+
