@@ -7,7 +7,8 @@
 *
 * Return: the number of characters printed.
 */
-	int b_specifier(va_list args)
+
+int b_specifier(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char *binary_str;
