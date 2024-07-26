@@ -7,7 +7,7 @@
 * Return: number of characters printed.
 **/
 
-static int print_number(int n)
+int print_number(int n)
 {
 	int printed_chars = 0;
 
