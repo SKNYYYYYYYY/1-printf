@@ -38,5 +38,6 @@ int main(void)
 	_printf("_Print hexa with i: %i\n", 0xa);
 	printf("Print hexa with i: %i\n", 0xa);
     
+	_printf("_Print binary with b: %b\n", 2);    
     return (0);
 }

@@ -15,7 +15,8 @@
 	int i, len = 0;
 	unsigned int temp = num;
 	int leading_zero;
-	if (num == 0)
+
+    if (num == 0)
 	{
 		printed_chars += _putchar('0');
 		return (printed_chars);
