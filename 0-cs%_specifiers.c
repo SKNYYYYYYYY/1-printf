@@ -6,10 +6,10 @@
   *
 */
 
-void c_specifier(va_list args)
+int c_specifier(va_list args)
 {
 	char c = va_arg(args, int);
-	_putchar(c);
+	return (_putchar(c));
 }
 
 /**
@@ -42,8 +42,8 @@ int s_specifier(va_list args)
   *
 */
 
-void modulo_specifier(va_list args)
+int modulo_specifier(va_list args)
 {
 	(void)args;
-	_putchar('%');
+	return (_putchar('%'));
 }
