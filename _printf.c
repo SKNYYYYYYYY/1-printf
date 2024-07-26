@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 						i=i + 2;
 						break;
 					case 's':
-						_printstring(va_arg(args, char *));
+						print_string(va_arg(args, char *));
 						break;
 					case '%':
 						_printnoarg(va_arg(args, char));
