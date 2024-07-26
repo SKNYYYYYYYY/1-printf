@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 	
 	directive_error = "Invalid directive";
 	va_start(args, format);
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -26,13 +27,8 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 			{
-				while (*directive_error != '\0')
-				{
-					printed_chars += _putchar(*directive_error);
-					directive_error++;
-					va_end(args);
-					return (-1);
-				}
+				va_end(args);
+				return (-1);
 			}
 			switch (format[i])
 			{
