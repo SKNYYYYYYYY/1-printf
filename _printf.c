@@ -4,53 +4,55 @@
  * _printf - function that produces output according to a format.
  * @format: is a character string composed of zero or more directives.
  * handled conversion specifiers:
- * 	- c
- * 	- s
- * 	- %
- * 	- d
- * 	- i
+ *	- c
+ *	- s
+ *	- %
+ *	- d
+ *	- i
  *
  * Return: the number of characters printed.
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0; 
-	
+	int i = 0, printed_chars = 0;
+
 	va_start(args, format);
 
 	if (format)
 	{
 		while (format[i])
 		{
-			if(format[i] == '%')
+			if (format[i] == '%')
 			{
-				switch (format[i+1])
+				i++;
+				switch (format[i])
 				{
 					case 'c':
-						
-						_c_specifier(va_list args); /*(ABEL) _printchar( va_arg(args, char)) */
-						i=i + 2;
+						c_specifier(args);
+						printed_chars++;
 						break;
 					case 's':
-						print_string(va_arg(args, char *));
+						printed_chars += s_specifier(args);
 						break;
 					case '%':
-						_printnoarg(va_arg(args, char));
+						modulo_specifier(args);
+						printed_chars++;
 						break;
 					default:
-						i++;
-						continue;
-
+						_putchar(format[i - 1]);
+						_putchar(format[i]);
+						printed_chars += 2;
 				}
 			}
 			else
+			{
 				_putchar(format[i]);
-
+				printed_chars++;
+			}
 			i++;
 		}
-
 	}
-	return (0);
+	va_end(args);
+	return (printed_chars);
 }

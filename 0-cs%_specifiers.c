@@ -1,25 +1,49 @@
 #include "main.h"
-void c_specifier(va_list args);
-void s_specifier();
-void modulo_specifier();
-int _putchar(char c);
+
 /**
   *c_specifier - function to print a character
-  *
+  * @args: input argument from the function.
   *
 */
+
 void c_specifier(va_list args)
 {
-  char c = va_arg(args, int);
-  _putchar(c);
+	char c = va_arg(args, int);
+	_putchar(c);
 }
 
-void s_specifier()
+/**
+  * s_specifier - function to print a character
+  * @args: input argument from the function.
+  *
+*/
+
+int s_specifier(va_list args)
 {
-     _putchar('s');
+	char *str = va_arg(args, char *);
+	int printed_chars = 0;
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (*str)
+	{
+		_putchar(*str);
+		printed_chars++;
+		str++;
+	}
+
+	return printed_chars;
 }
 
-void modulo_specifier()
+/**
+  * modulo_specifier - function to print a modulo
+  * @args: input argument from the function.
+  *
+*/
+
+void modulo_specifier(va_list args)
 {
-     _putchar('m');
+	(void)args;
+	_putchar('%');
 }
