@@ -12,6 +12,8 @@ int s_specifier(va_list args);
 int modulo_specifier(va_list args);
 int d_specifier(va_list args);
 int i_specifier(va_list args);
+int b_specifier(va_list args);
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 

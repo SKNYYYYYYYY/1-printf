@@ -47,6 +47,9 @@ int _printf(const char *format, ...)
         case 'i':
           printed_chars += i_specifier(args);
           break;
+				case 'b':
+					printed_chars += b_specifier(args);
+					break;
 				default:
 					printed_chars += _putchar('%');
 					printed_chars += _putchar(format[i]);
