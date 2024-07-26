@@ -7,9 +7,9 @@
 #define NULL ((void *)0)
 #endif /* NULL */
 
-void c_specifier(va_list args);
+int c_specifier(va_list args);
 int s_specifier(va_list args);
-void modulo_specifier(va_list args);
+int modulo_specifier(va_list args);
 int d_specifier(va_list args);
 int i_specifier(va_list args);
 int _putchar(char c);
