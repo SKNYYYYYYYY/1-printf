@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 				{
 					case 'c':
 						
-						_printchar(va_arg(args, char)); /*(NEWTON) c_specifier(va_list args) */
+						_c_specifier(va_list args);
 						i=i + 2;
 						break;
 					case 's':
