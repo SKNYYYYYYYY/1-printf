@@ -38,6 +38,12 @@ int _printf(const char *format, ...)
 						modulo_specifier(args);
 						printed_chars++;
 						break;
+                    case 'd':
+                        printed_chars += d_specifier(args);
+                        break;
+                    case 'i':
+                        printed_chars += i_specifier(args);
+                        break;
 					default:
 						_putchar('%');
 						_putchar(format[i]);
