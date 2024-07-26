@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 				switch (format[i+1])
 				{
 					case 'c':
-						_printchar(va_arg(args, char));
+						
+						_c_specifier(va_list args); /*(ABEL) _printchar( va_arg(args, char)) */
 						i=i + 2;
 						break;
 					case 's':
